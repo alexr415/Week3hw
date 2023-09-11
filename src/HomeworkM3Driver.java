@@ -3,7 +3,19 @@ import java.util.*;
 public class HomeworkM3Driver {
 
 	public static void prioritizeMaximumValue(List<Integer> numberList) {
-		// YOUR CODE HERE
+		if (numberList.size()<2){
+			return;
+		}
+		int max=numberList.get(0);
+		int indexOfMax=0;
+		for (int i=1; i<numberList.size();i++){
+			if (numberList.get(i)>max){
+				max=numberList.get(i);
+				indexOfMax=i;
+			}
+		}
+		numberList.add(0,numberList.remove(indexOfMax));
+
 	}
 
 	public static boolean containsDuplicates(Multiset<String> wordSet) {
@@ -174,7 +186,7 @@ public class HomeworkM3Driver {
 		testEquivalentLists(new Integer[] { 2, 3, 5, 4 }, new Integer[] { 3, 2, 5, 4 }, false,
 				"last two elements are the same");
 
-		/*
+
 		System.out.println("\n\n-----------------------------TESTING EXTRA CREDIT prioritizeMaximumValue METHOD-----------------------------");
 		// parameter 1: the contents of the List
 		// parameter 2: the expected contents of the list after the max is prioritized
@@ -188,7 +200,7 @@ public class HomeworkM3Driver {
 		testPrioritizeMax(new Integer[] { 8, 3, 4, 5, 2 }, new Integer[] { 8, 3, 4, 5, 2 },
 				"maximum at the beginning of the list");
 		testPrioritizeMax(new Integer[] { -4, -3, -2, -5 }, new Integer[] { -2, -4, -3, -5 }, "maximum is negative");
-*/
+
 		System.out.println("\n\n-----------------------------TESTING COMPLETE-----------------------------");
 		if (allTestsPassed) {
 			System.out.println(
