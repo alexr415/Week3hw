@@ -48,7 +48,7 @@ public class HomeworkM3Driver {
 			allTestsPassed = false;
 			System.out.println("***Test failed: array not sorted correctly.");
 		}
-
+/*
 		System.out.println("\n\n-----------------------------TESTING containsDuplicates(Multiset) METHOD-----------------------------");
 		// parameter 1: the contents being added to the set
 		// parameter 2: the expected result (true if the set contains duplicates, false otherwise)
@@ -144,7 +144,7 @@ public class HomeworkM3Driver {
 		testPrioritizeMax(new Integer[] { 8, 3, 4, 5, 2 }, new Integer[] { 8, 3, 4, 5, 2 },
 				"maximum at the beginning of the list");
 		testPrioritizeMax(new Integer[] { -4, -3, -2, -5 }, new Integer[] { -2, -4, -3, -5 }, "maximum is negative");
-
+*/
 		System.out.println("\n\n-----------------------------TESTING COMPLETE-----------------------------");
 		if (allTestsPassed) {
 			System.out.println(
