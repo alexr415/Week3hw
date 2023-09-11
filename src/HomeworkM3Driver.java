@@ -44,8 +44,13 @@ public class HomeworkM3Driver {
 	}
 
 	public static int lastPosition(List<String> wordList, String targetWord) {
-		return 0; // placeholder: replace with your own code
-		// YOUR CODE HERE
+		int position =-1;
+		for(int i = 0; i< wordList.size();i++){
+			if (wordList.get(i).equals(targetWord)){
+				position = i;
+			}
+		}
+		return position;
 	}
 
 	public static boolean equivalentLists(ListFromOne<Integer> numberListFromOne, List<Integer> numberList) {
@@ -105,7 +110,7 @@ public class HomeworkM3Driver {
 				"list with no elements containing the target character");
 		testCreateList(new String[] { "apple", "anna", "bob", "ANIMAL", "canal", "frog", "cat" }, 'a', new String[] { "apple", "anna", "canal", "cat" },
 				"list with elements that contain the target at beginning, middle, and end of the list");
-/*
+
 		System.out.println("\n\n-----------------------------TESTING lastPosition METHOD-----------------------------");
 		// parameter 1: the contents of the List
 		// parameter 2: the target word
@@ -124,7 +129,7 @@ public class HomeworkM3Driver {
 				"target on the list more than once with last occurrence in the middle");
 		testLastPosition(new String[] { "f", "b", "g", "b", "v", "e", "c", "s" }, "f",
 				"target on the list once at the beginning of the list");
-
+/*
 		System.out.println("\n\n-----------------------------TESTING equivalentLists METHOD-----------------------------");
 		// parameter 1: the contents of the ListFromOne
 		// parameter 2: the contents of the List
