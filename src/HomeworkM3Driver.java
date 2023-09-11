@@ -7,8 +7,25 @@ public class HomeworkM3Driver {
 	}
 
 	public static boolean containsDuplicates(Multiset<String> wordSet) {
-		return false; // placeholder: replace with your own code
-		// YOUR CODE HERE
+		if(wordSet.isEmpty()){
+			return false;
+		}
+		Multiset<String> tempSet = new ArrayMultiset<>();
+		boolean containsDuplicates = false;
+		final int ITERATIONS = wordSet.size();
+
+		for (int i=0; i <ITERATIONS; i++){
+			String temp = wordSet.remove();
+			tempSet.add(temp);
+			if (wordSet.contains(temp)){
+				containsDuplicates = true;
+			}
+		}
+
+		for (int i=0; i<ITERATIONS;i++){
+			wordSet.add(tempSet.remove());
+		}
+		return containsDuplicates;
 	}
 
 	public static ListFromOne<String> createListFromOneContainingChar(ListFromOne<String> wordList, char targetChar) {
@@ -48,7 +65,7 @@ public class HomeworkM3Driver {
 			allTestsPassed = false;
 			System.out.println("***Test failed: array not sorted correctly.");
 		}
-/*
+
 		System.out.println("\n\n-----------------------------TESTING containsDuplicates(Multiset) METHOD-----------------------------");
 		// parameter 1: the contents being added to the set
 		// parameter 2: the expected result (true if the set contains duplicates, false otherwise)
@@ -61,7 +78,7 @@ public class HomeworkM3Driver {
 		testMultisetContainsDuplicates(new String[] { "a", "c", "b", "d", "a" }, true, "set with duplicates added first and last");
 		testMultisetContainsDuplicates(new String[] { "a", "b", "b", "c" }, true, "set with duplicates added in the middle");
 		testMultisetContainsDuplicates(new String[] { "a", "a", "b", "c", "e", "f" }, true, "set with duplicates added first");
-
+/*
 		System.out.println("\n\n-----------------------------TESTING createListContainingChar METHOD-----------------------------");
 		// parameter 1: the contents of the ListFromOne
 		// parameter 2: the target character
