@@ -29,8 +29,18 @@ public class HomeworkM3Driver {
 	}
 
 	public static ListFromOne<String> createListFromOneContainingChar(ListFromOne<String> wordList, char targetChar) {
-		return new ArrayListFromOne<String>(); // placeholder: replace with your own code
-		// YOUR CODE HERE
+		ListFromOne<String> returnList = new ArrayListFromOne<>();
+		final int LISTFROMONE_OFFSET = 1;
+		if(wordList.isEmpty()){
+			return returnList;
+		}
+		for(int i=LISTFROMONE_OFFSET; i<= wordList.size(); i++){
+			String temp = wordList.get(i);
+			if (temp.contains(""+targetChar)){
+				returnList.add(temp);
+			}
+		}
+		return returnList;
 	}
 
 	public static int lastPosition(List<String> wordList, String targetWord) {
@@ -78,7 +88,7 @@ public class HomeworkM3Driver {
 		testMultisetContainsDuplicates(new String[] { "a", "c", "b", "d", "a" }, true, "set with duplicates added first and last");
 		testMultisetContainsDuplicates(new String[] { "a", "b", "b", "c" }, true, "set with duplicates added in the middle");
 		testMultisetContainsDuplicates(new String[] { "a", "a", "b", "c", "e", "f" }, true, "set with duplicates added first");
-/*
+
 		System.out.println("\n\n-----------------------------TESTING createListContainingChar METHOD-----------------------------");
 		// parameter 1: the contents of the ListFromOne
 		// parameter 2: the target character
@@ -95,7 +105,7 @@ public class HomeworkM3Driver {
 				"list with no elements containing the target character");
 		testCreateList(new String[] { "apple", "anna", "bob", "ANIMAL", "canal", "frog", "cat" }, 'a', new String[] { "apple", "anna", "canal", "cat" },
 				"list with elements that contain the target at beginning, middle, and end of the list");
-
+/*
 		System.out.println("\n\n-----------------------------TESTING lastPosition METHOD-----------------------------");
 		// parameter 1: the contents of the List
 		// parameter 2: the target word
