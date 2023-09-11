@@ -54,8 +54,19 @@ public class HomeworkM3Driver {
 	}
 
 	public static boolean equivalentLists(ListFromOne<Integer> numberListFromOne, List<Integer> numberList) {
-		return false; // placeholder: replace with your own code
-		// YOUR CODE HERE
+		final int LISTFROMONE_OFFSET= 1;
+		if (numberList.size()==numberListFromOne.size()){
+			if(numberList.size()==0){
+				return true;
+			}
+			for (int i=0; i<numberList.size(); i++){
+				if(!numberList.get(i).equals(numberListFromOne.get(i+LISTFROMONE_OFFSET))){
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
 	}
 
 
@@ -129,7 +140,7 @@ public class HomeworkM3Driver {
 				"target on the list more than once with last occurrence in the middle");
 		testLastPosition(new String[] { "f", "b", "g", "b", "v", "e", "c", "s" }, "f",
 				"target on the list once at the beginning of the list");
-/*
+
 		System.out.println("\n\n-----------------------------TESTING equivalentLists METHOD-----------------------------");
 		// parameter 1: the contents of the ListFromOne
 		// parameter 2: the contents of the List
@@ -163,6 +174,7 @@ public class HomeworkM3Driver {
 		testEquivalentLists(new Integer[] { 2, 3, 5, 4 }, new Integer[] { 3, 2, 5, 4 }, false,
 				"last two elements are the same");
 
+		/*
 		System.out.println("\n\n-----------------------------TESTING EXTRA CREDIT prioritizeMaximumValue METHOD-----------------------------");
 		// parameter 1: the contents of the List
 		// parameter 2: the expected contents of the list after the max is prioritized
